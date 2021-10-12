@@ -1,0 +1,125 @@
+@import url(//db.onlinewebfonts.com/c/d3a85c6c38eeb78ad624d05db74526bd?family=Neue+Plak+W01);
+@font-face {font-family: "Neue Plak W01"; src: url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.eot"); src: url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.woff") format("woff"), url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d3a85c6c38eeb78ad624d05db74526bd.svg#Neue Plak W01") format("svg"); }
+
+// -=*=-=*=- GLOBALS -=*=-=*=-
+$bg-color: #F9F9F9
+$text-color: #292A2C
+$medium-color: #979797
+
+*
+  margin: 0
+  padding: 0
+
+body
+  background: $bg-color
+  color: $text-color
+  font-family: 'Poppins', sans-serif
+
+a
+  color: currentColor
+  text-decoration: none
+
+li
+  list-style: none
+
+.active
+  color: $text-color
+  text-decoration: underline
+
+main
+  padding: 0 1.2rem
+
+@media screen and (min-width: 812px)
+  main
+    display: flex
+    flex-direction: column
+    align-items: center
+
+// -=*=-=*=- Header -=*=-=*=-
+header
+  margin-top: 0.6rem
+  
+  a
+    span:first-child
+      font: bold 2.2rem 'Neue Plak W01', monospace
+  
+    span:last-child
+      font: 600 1.6rem 'Poppins', sans-serif
+      letter-spacing: 9px
+      display: block
+      margin-top: -10px
+
+  nav
+    margin-top: 1rem
+    font-size: 2rem
+    font-weight: 500
+
+    a:hover
+      text-decoration: underline
+
+@media screen and (min-width: 812px)
+  header
+    margin-top: 1.4rem
+    width: 94vw
+    display: flex
+    justify-content: space-between
+  
+  nav a:last-of-type
+    margin-left: 3vw
+
+// -=*=-=*=- Categories -=*=-=*=-
+section.categories
+  margin-top: 1rem
+  font-size: 1.8rem
+  color: $medium-color
+
+  a
+    margin-right: 3vw
+    transition: 200ms
+
+    &:last-of-type
+      margin-right: 0
+
+    &:hover
+      color: $text-color
+      text-decoration: underline
+
+@media screen and (min-width: 812px)
+  section.categories
+    margin-top: 3rem
+    width: 70vw
+    font-size: 1.6rem
+    font-weight: 500
+    display: flex
+    justify-content: space-between
+
+
+// -=*=-=*=- Gallery -=*=-=*=-
+section.gallery
+  margin-top: 1.2rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  
+  img
+    margin-top: 1.2rem
+    width: 90vw
+
+@media screen and (min-width: 420px)
+  section.gallery
+    margin-top: 1.8rem
+    width: 70vw
+    justify-content: space-between
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 1rem 0.2rem
+
+    img
+      margin: 0 auto 2rem
+      display: block
+      width: 430px
+ 
+// -=*=-=*=- Queries -=*=-=*=-
+@media screen and (max-width: 812px)
+  html
+    font-size: 87.5% // 14px
