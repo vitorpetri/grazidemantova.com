@@ -10,6 +10,9 @@ $medium-color: #979797
   margin: 0
   padding: 0
 
+html
+  scroll-behavior: smooth
+
 body
   background: $bg-color
   color: $text-color
@@ -26,10 +29,23 @@ li
   color: $text-color
   text-decoration: underline
 
+#top-btn
+  border: 2px solid $text-color
+  border-radius: 77rem
+  padding: 1rem 2rem
+  margin: 4rem 0 3rem
+  font-size: 1.1rem
+  font-weight: bold
+
 main
   padding: 0 1.2rem
+  
+  & > div
+    display: flex
+    flex-direction: column
+    align-items: center
 
-@media screen and (min-width: 812px)
+@media screen and (min-width: 1000px)
   main
     display: flex
     flex-direction: column
@@ -57,10 +73,10 @@ header
     a:hover
       text-decoration: underline
 
-@media screen and (min-width: 812px)
+@media screen and (min-width: 1000px)
   header
     margin-top: 1.4rem
-    width: 94vw
+    width: calc(min(94vw, 2140px))
     display: flex
     justify-content: space-between
   
@@ -84,10 +100,10 @@ section.categories
       color: $text-color
       text-decoration: underline
 
-@media screen and (min-width: 812px)
+@media screen and (min-width: 1080px)
   section.categories
     margin-top: 3rem
-    width: 70vw
+    width: calc(min(72vw, 1920px))
     font-size: 1.6rem
     font-weight: 500
     display: flex
@@ -101,25 +117,32 @@ section.gallery
   flex-direction: column
   align-items: center
   
+@media screen and (max-width: 500px)
   img
-    margin-top: 1.2rem
-    width: 90vw
+      margin-top: 1.2rem
+      width: 90vw
 
-@media screen and (min-width: 420px)
+@media (min-width: 500px) and (max-width: 1000px)
+  img
+      width: 60vw
+
+@media screen and (min-width: 1000px)
   section.gallery
     margin-top: 1.8rem
-    width: 70vw
-    justify-content: space-between
+    width: calc(min(94vw, 1400px))
     flex-direction: row
     flex-wrap: wrap
-    gap: 1rem 0.2rem
+    // flex-shrink: 1
+    justify-content: center
 
     img
-      margin: 0 auto 2rem
-      display: block
-      width: 430px
+      flex-shrink: 1
+      transition: 300ms
+
+      &:hover
+        transform: scale(0.98)
  
 // -=*=-=*=- Queries -=*=-=*=-
-@media screen and (max-width: 812px)
+@media screen and (max-width: 1000px)
   html
     font-size: 87.5% // 14px
