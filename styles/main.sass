@@ -70,8 +70,25 @@ header
     font-size: 2rem
     font-weight: 500
 
+    a
+      position: relative
+
+    a::before
+        content: ''
+        opacity: 0
+        position: absolute
+        bottom: 6px
+        left: 0
+        width: 0%
+        height: 8%
+        background: $medium-color
+        transition: 300ms
+
     a:hover
-      text-decoration: underline
+      &::before
+        width: 100%
+        opacity: 1
+        background: $text-color
 
 @media screen and (min-width: 1000px)
   header
@@ -91,14 +108,30 @@ section.categories
 
   a
     margin-right: 3vw
-    transition: 200ms
+    transition: 300ms
+    position: relative
 
     &:last-of-type
       margin-right: 0
 
+    &::before
+      content: ''
+      opacity: 0
+      position: absolute
+      bottom: 6px
+      left: 0
+      width: 0%
+      height: 8%
+      background: $medium-color
+      transition: 300ms
+
     &:hover
       color: $text-color
-      text-decoration: underline
+      
+      &::before
+        width: 100%
+        opacity: 1
+        background: $text-color
 
 @media screen and (min-width: 1080px)
   section.categories
@@ -142,6 +175,34 @@ section.gallery
       &:hover
         transform: scale(0.98)
  
+// -=*=-=*=- About -=*=-=*=-
+.about__text
+  margin-top: 6rem
+  font-size: 1.2rem
+  width: calc(min(80vw, 800px))
+  border-top: 1px solid $text-color
+  border-bottom: 1px solid $text-color
+  padding: 3rem 0
+
+
+  @media screen and (max-width: 1000px)
+    margin-top: 1.4rem
+    padding-top: 2rem
+
+.about__links
+  margin-top: 4rem
+  text-decoration: underline
+  font-size: 1.1rem
+  font-weight: bold
+  display: flex
+  justify-content: space-around
+
+  li a 
+    transition: 300ms
+    
+  li a:hover
+    color: $medium-color
+
 // -=*=-=*=- Queries -=*=-=*=-
 @media screen and (max-width: 1000px)
   html
